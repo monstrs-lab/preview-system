@@ -1,0 +1,21 @@
+version: '3.8'
+
+volumes:
+  yarn:
+
+services:
+  yarn:
+    image: node:22
+    working_dir: /workspace
+    volumes:
+      - yarn:/.yarn/berry
+      - ./:/workspace
+    entrypoint: yarn
+
+  db:
+    image: bitnami/postgresql
+    environment:
+      - POSTGRESQL_PASSWORD=password
+      - POSTGRESQL_DATABASE=db
+    ports:
+      - 5432:5432

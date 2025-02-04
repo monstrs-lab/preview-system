@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": false,
+    "isolatedModules": false,
+    "moduleResolution": "nodenext",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "pretty": true,
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "strictPropertyInitialization": false,
+    "module": "nodenext",
+    "target": "es2021",
+    "jsx": "react",
+    "outDir": "./dist",
+    "sourceMap": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "noImplicitOverride": true,
+    "skipLibCheck": true,
+    "allowJs": true
+  },
+  "include": ["project.types.d.ts", "packages/**/*"]
+}
