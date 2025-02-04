@@ -1,0 +1,76 @@
+{
+  "name": "@preview-system/service-entrypoint",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "yarn service build",
+    "dev": "yarn service dev",
+    "orm": "node --loader ts-node/esm --loader $(pwd)/../../.pnp.loader.mjs --loader $(pwd)/../../.pnp-ts.loader.mjs $(yarn bin mikro-orm)",
+    "prepack": "run build",
+    "start": "yarn node dist/index.js"
+  },
+  "devDependencies": {
+    "@aws-sdk/client-s3": "^3.741.0",
+    "@faker-js/faker": "^9.0.3",
+    "@fastify/static": "^7.0.4",
+    "@fastify/view": "^9.1.0",
+    "@google-cloud/storage": "^7.15.0",
+    "@mikro-orm/cli": "^6.3.11",
+    "@mikro-orm/core": "^6.3.11",
+    "@mikro-orm/entity-generator": "^6.3.11",
+    "@mikro-orm/knex": "^6.3.11",
+    "@mikro-orm/migrations": "^6.3.11",
+    "@mikro-orm/nestjs": "^6.0.2",
+    "@mikro-orm/postgresql": "^6.3.11",
+    "@mikro-orm/seeder": "^6.3.11",
+    "@monstrs/nestjs-cqrs": "^0.0.11",
+    "@monstrs/nestjs-logger": "^0.4.6",
+    "@nestjs/common": "^10.4.4",
+    "@nestjs/config": "^3.2.3",
+    "@nestjs/core": "^10.4.4",
+    "@nestjs/cqrs": "^10.2.7",
+    "@nestjs/microservices": "^10.4.4",
+    "@nestjs/platform-express": "^10.4.4",
+    "@nestjs/platform-fastify": "^10.4.4",
+    "@nestjs/platform-socket.io": "^10.4.4",
+    "@nestjs/testing": "^10.4.4",
+    "@nestjs/websockets": "^10.4.4",
+    "@preview-system/infrastructure-module": "workspace:0.0.1",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.7.3",
+    "@types/pg": "^8.11.10",
+    "amqp-connection-manager": "^4.1.14",
+    "amqplib": "^0.10.4",
+    "cache-manager": "^6.1.0",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
+    "fastify": "^4.28.1",
+    "get-port": "^7.1.0",
+    "is-docker": "^3.0.0",
+    "knex": "^3.1.0",
+    "p-retry": "^6.2.0",
+    "pg": "^8.13.0",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1",
+    "testcontainers": "^10.13.1",
+    "ts-morph": "^23.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2"
+  },
+  "mikro-orm": {
+    "useTsNode": true,
+    "configPaths": [
+      "./src/mikro-orm.config.ts"
+    ]
+  },
+  "packConfiguration": {
+    "require": [
+      "ffmpeg",
+      "ghostscript",
+      "graphicsmagick"
+    ]
+  }
+}
