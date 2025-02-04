@@ -1,0 +1,48 @@
+{
+  "name": "@preview-system/application-module",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "yarn service build",
+    "dev": "yarn service dev",
+    "prepack": "run build",
+    "start": "yarn node dist/index.js"
+  },
+  "dependencies": {
+    "@preview-system/domain-module": "workspace:0.0.1",
+    "mime": "^4.0.6"
+  },
+  "devDependencies": {
+    "@deepkit/app": "^1.0.1-alpha.156",
+    "@deepkit/bson": "^1.0.1-alpha.156",
+    "@deepkit/core": "^1.0.1-alpha.156",
+    "@deepkit/core-rxjs": "^1.0.1-alpha.156",
+    "@deepkit/event": "^1.0.1-alpha.156",
+    "@deepkit/injector": "^1.0.1-alpha.156",
+    "@deepkit/logger": "^1.0.1-alpha.156",
+    "@deepkit/orm": "^1.0.1-alpha.156",
+    "@deepkit/rpc": "^1.0.1-alpha.156",
+    "@deepkit/stopwatch": "^1.0.1-alpha.156",
+    "@deepkit/type": "^1.0.1-alpha.156",
+    "@deepkit/workflow": "^1.0.1-alpha.156",
+    "rxjs": "^7.8.1"
+  },
+  "peerDependencies": {
+    "@deepkit/app": "^1",
+    "@deepkit/bson": "^1",
+    "@deepkit/core": "^1",
+    "@deepkit/core-rxjs": "^1",
+    "@deepkit/event": "^1",
+    "@deepkit/injector": "^1",
+    "@deepkit/logger": "^1",
+    "@deepkit/orm": "^1",
+    "@deepkit/rpc": "^1",
+    "@deepkit/stopwatch": "^1",
+    "@deepkit/type": "^1",
+    "@deepkit/workflow": "^1",
+    "rxjs": "^7"
+  }
+}

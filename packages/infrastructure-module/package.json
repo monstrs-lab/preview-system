@@ -1,0 +1,58 @@
+{
+  "name": "@preview-system/infrastructure-module",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "yarn service build",
+    "dev": "yarn service dev",
+    "prepack": "run build",
+    "start": "yarn node dist/index.js"
+  },
+  "dependencies": {
+    "@deepkit/filesystem": "^1.0.1-alpha.156",
+    "@preview-system/application-module": "workspace:0.0.1",
+    "fluent-ffmpeg": "^2.1.3",
+    "pdf2pic": "^3.1.3",
+    "urlpattern-polyfill": "^10.0.0"
+  },
+  "devDependencies": {
+    "@deepkit/app": "^1.0.1-alpha.156",
+    "@deepkit/bson": "^1.0.1-alpha.156",
+    "@deepkit/core": "^1.0.1-alpha.156",
+    "@deepkit/core-rxjs": "^1.0.1-alpha.156",
+    "@deepkit/event": "^1.0.1-alpha.156",
+    "@deepkit/filesystem-aws-s3": "patch:@deepkit/filesystem-aws-s3@npm%3A1.0.1-alpha.156#~/.yarn/patches/@deepkit-filesystem-aws-s3-npm-1.0.1-alpha.156-4a3767dad9.patch",
+    "@deepkit/http": "^1.0.1-alpha.156",
+    "@deepkit/injector": "^1.0.1-alpha.156",
+    "@deepkit/logger": "^1.0.1-alpha.156",
+    "@deepkit/orm": "^1.0.1-alpha.156",
+    "@deepkit/rpc": "^1.0.1-alpha.156",
+    "@deepkit/stopwatch": "^1.0.1-alpha.156",
+    "@deepkit/template": "^1.0.1-alpha.156",
+    "@deepkit/type": "^1.0.1-alpha.156",
+    "@deepkit/workflow": "^1.0.1-alpha.156",
+    "@types/fluent-ffmpeg": "^2.1.27",
+    "rxjs": "^7.8.1"
+  },
+  "peerDependencies": {
+    "@deepkit/app": "^1",
+    "@deepkit/bson": "^1",
+    "@deepkit/core": "^1",
+    "@deepkit/core-rxjs": "^1",
+    "@deepkit/event": "^1",
+    "@deepkit/filesystem-aws-s3": "*",
+    "@deepkit/http": "^1",
+    "@deepkit/injector": "^1",
+    "@deepkit/logger": "^1",
+    "@deepkit/orm": "^1",
+    "@deepkit/rpc": "^1",
+    "@deepkit/stopwatch": "^1",
+    "@deepkit/template": "^1",
+    "@deepkit/type": "^1",
+    "@deepkit/workflow": "^1",
+    "rxjs": "^7"
+  }
+}

@@ -1,0 +1,24 @@
+diff --git a/dist/cjs/src/s3-adapter.js b/dist/cjs/src/s3-adapter.js
+index c61058c325cf9ee7d61aa8c51173c7043ff45e4e..668b9b177e23eef8ea27520ee61ad45795667564 100644
+--- a/dist/cjs/src/s3-adapter.js
++++ b/dist/cjs/src/s3-adapter.js
+@@ -8,6 +8,7 @@ class FilesystemAwsS3Adapter {
+     constructor(options) {
+         this.options = options;
+         this.client = new client_s3_1.S3Client({
++            forcePathStyle: true,
+             region: options.region,
+             credentials: {
+                 accessKeyId: options.accessKeyId,
+diff --git a/dist/esm/src/s3-adapter.js b/dist/esm/src/s3-adapter.js
+index 20559ca1cedea05309c3aee658a0cb40c0c73f08..0915c70b65a5869c4b71b612c8982c7e3d85c35d 100644
+--- a/dist/esm/src/s3-adapter.js
++++ b/dist/esm/src/s3-adapter.js
+@@ -5,6 +5,7 @@ export class FilesystemAwsS3Adapter {
+     constructor(options) {
+         this.options = options;
+         this.client = new S3Client({
++            forcePathStyle: true,
+             region: options.region,
+             credentials: {
+                 accessKeyId: options.accessKeyId,
