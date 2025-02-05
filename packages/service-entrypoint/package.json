@@ -68,9 +68,9 @@
   },
   "packConfiguration": {
     "require": [
-      "ffmpeg",
+      "graphicsmagick",
       "ghostscript",
-      "graphicsmagick"
+      "ffmpeg"
     ]
   }
 }
