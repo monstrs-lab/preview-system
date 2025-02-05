@@ -12,15 +12,43 @@ import { GeneratePreviewUseCase }       from '@preview-system/application-module
 import { AccessDeniedError }            from '@preview-system/domain-module'
 import { InvalidSourceTypeError }       from '@preview-system/domain-module'
 
-@Controller('preview')
+@Controller()
 export class PreviewController {
   #logger = new Logger(PreviewController.name)
 
   constructor(private readonly generatePreviewUseCase: GeneratePreviewUseCase) {}
 
-  @Get()
+  @Get('/preview')
   @Redirect()
   async preview(@Query('url') url: string): Promise<{ url: string }> {
+    if (url == null) {
+      throw new UnprocessableEntityException()
+    }
+
+    try {
+      const previewURL = await this.generatePreviewUseCase.execute({ url })
+
+      return {
+        url: previewURL,
+      }
+    } catch (error) {
+      this.#logger.error(error)
+
+      if (error instanceof AccessDeniedError) {
+        throw new UnauthorizedException()
+      }
+
+      if (error instanceof InvalidSourceTypeError) {
+        throw new ConflictException()
+      }
+
+      throw new InternalServerErrorException()
+    }
+  }
+
+  @Get('/preview.png')
+  @Redirect()
+  async png(@Query('url') url: string): Promise<{ url: string }> {
     if (url == null) {
       throw new UnprocessableEntityException()
     }
